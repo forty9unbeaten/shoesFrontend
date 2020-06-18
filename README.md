@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React + APIs in a Nutshell
 
-## Available Scripts
+Now that you've created an API with Django Rest Framework (DRF), let's put that API to use!
 
-In the project directory, you can run:
+## IMPORTANT
 
-### `npm start`
+This repository is designed to be used with:
+[Django REST API](https://github.com/forty9unbeaten/djangoRESTapiShoes)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Django REST API & React
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+You all remember [React](https://reactjs.org/)...right? Well. it's just the tool we need for accessing the data from our API. In this assessment, we'll create a Single Page Application (SPA) that fetches data from our backend API and displays it on our React frontend.
 
-### `npm test`
+## Your Task
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For this assessment, we will be creating a new React frontend and reusing our backend from Django ReST Framework: APIs in a Nutshell
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a new react app. You'll want to use something like Facebook's [Create React App](https://github.com/facebook/create-react-app/blob/master/README.md).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Please check the documentation, because this project's documentation is frequently updated. You can use either npm or yarn as your package manager, it's up to your personal preference.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This react app will be relatively simple. We don't need to worry about using Redux, and we just need to create one component to handle everything we need.
 
-### `npm run eject`
+#### Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-   Uses [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from your Django Rest Framework API → [AJAX FAQ](https://reactjs.org/docs/faq-ajax.html)
+-   Displays all instances of Shoe on a single page
+-   Each attribute of a given Shoe is displayed:
+    -   size
+    -   brand name
+    -   manufacturer
+    -   color
+    -   material
+    -   shoe_type
+    -   fasten_type
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Our backend API is already functional, but we do need to make some changes before it will talk to our frontend. The frontend will be displaying shoes, so be sure to add at least 5 new instances of shoe to your backend.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+In addition, we'll need to worry about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) DRF has a [documentation page](https://www.django-rest-framework.org/topics/ajax-csrf-cors/#cors) on how to handle CORS via a python package called [django-cors-headers](https://github.com/ottoyiu/django-cors-headers/)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Use this package to allow your frontend to fetch data.
